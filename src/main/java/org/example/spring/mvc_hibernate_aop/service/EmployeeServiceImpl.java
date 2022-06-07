@@ -18,4 +18,17 @@ public class EmployeeServiceImpl implements EmployeeService{
     public List<Employee> getAllEmployee() {
         return  employeeDAO.getAllEmployees();
     }
+
+    @Override
+    @Transactional
+    public void saveEmployee(Employee employee) {
+        employeeDAO.saveEmployee(employee);
+    }
+
+    @Override
+    @Transactional
+    public Employee getEmployee(long id) {
+        Employee employee = employeeDAO.getEmployee(id);
+        return employee;
+    }
 }
